@@ -10,13 +10,6 @@ import { SubmissionStatusCards } from "@/components/dashboard/elements/Submissio
 import { Targets } from "@/components/dashboard/elements/Targets";
 import { ToDoList } from "@/components/dashboard/elements/ToDoList";
 import { UserCard } from "@/components/dashboard/elements/UserCard";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 export default function Dashboard() {
   return (
@@ -35,22 +28,10 @@ export default function Dashboard() {
               "Production Quality",
             ]}
           />
-          <AmountCard
-            title="Received Amount"
-            amount="300 dt"
-            percentage="37%"
-          />
+          <AmountCard title="Received Amount" amount={300} percentage="37%" />
 
-          <AmountCard
-            title="Pending Amount"
-            amount="200 dt"
-            percentage="-17%"
-          />
-          <AmountCard
-            title="Spent This Week"
-            amount="150 dt"
-            percentage="+8%"
-          />
+          <AmountCard title="Pending Amount" amount={200} percentage="-17%" />
+          <AmountCard title="Spent This Week" amount={150} percentage="+8%" />
         </div>
 
         <div className=" rounded-3xl  shadow-none sm:w-5/6 w-full">

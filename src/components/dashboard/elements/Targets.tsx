@@ -1,6 +1,8 @@
 "use client";
 
 import { Progress } from "@/components/ui/progress";
+import { motion } from "framer-motion";
+import { CountUp } from "./CountUp";
 
 interface Target {
   title: string;
@@ -36,7 +38,10 @@ const targets: Target[] = [
 
 export const Targets = () => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       className="w-full
      rounded-3xl        border   
 px-5 py-5 space-y-5"
@@ -51,21 +56,39 @@ px-5 py-5 space-y-5"
             <span className="text-medium text-muted-foreground">
               {target.title}
             </span>
-            <span className="text-medium text-muted-foreground">
-              {target.percentage}%
-            </span>
+            <CountUp
+              from={0}
+              to={target.percentage}
+              separator=""
+              duration={1}
+              className="text-medium text-muted-foreground"
+            >
+              {" "}
+              <span className="text-medium text-muted-foreground">%</span>
+            </CountUp>
           </div>
           <Progress
             value={target.percentage}
             className="h-2 bg-muted-foreground/10"
           />
-          <div className="text-xs font-medium text-stone-400">
-            {target.unit === "DT"
-              ? `$${target.current.toLocaleString()} / $${target.total.toLocaleString()}`
-              : `${target.current} / ${target.total} ${target.unit}`}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="text-xs font-medium text-stone-400"
+          >
+            <CountUp
+              to={target.current}
+              from={target.current * 0.8}
+              duration={1.3}
+              delay={0.5}
+            />
+            <span className="mx-0.5">/</span>
+            <span>{target.total} </span>
+            <span>{target.unit}</span>
+          </motion.div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };

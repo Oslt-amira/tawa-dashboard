@@ -16,6 +16,8 @@ import { Button } from "@/components/ui/button";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { BellIcon } from "lucide-react";
 import SearchBar from "./elements/SearchBar";
+import { motion } from "framer-motion";
+
 export default function DashboardHeader() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
@@ -37,7 +39,12 @@ export default function DashboardHeader() {
   const showBreadcrumbs = pathname !== "/dashboard";
 
   return (
-    <header className="fixed top-0 z-50 border-b bg-card shadow-sm">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="fixed top-0 z-50 border-b bg-card shadow-sm  "
+    >
       <div className="w-screen flex h-16 items-center justify-between px-4 md:px-6 lg:px-8">
         <div className=" items-center gap-1 ">
           <Breadcrumb>
@@ -106,6 +113,6 @@ export default function DashboardHeader() {
           <UserDropdown />
         </div>
       </div>
-    </header>
+    </motion.div>
   );
 }

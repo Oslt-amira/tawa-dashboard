@@ -46,8 +46,9 @@ export const RecentActivity = () => {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.4, delay: index * 0.2 }}
               className="flex  flex-col gap-1 items-start justify-center px-1 rounded-md border-b border-stone-400/50 pt-4 pb-2 last:border-b-0"
             >
               <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium">

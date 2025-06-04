@@ -1,6 +1,8 @@
 "use client";
 
 import { Video, CheckCircle, Clock4 } from "lucide-react";
+import { motion } from "framer-motion";
+import { CountUp } from "./CountUp";
 
 export const SubmissionStatusCards = () => {
   const cards = [
@@ -25,7 +27,12 @@ export const SubmissionStatusCards = () => {
   ];
 
   return (
-    <div className="w-full py-4 flex flex-wrap justify-between gap-4">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-full py-4 flex flex-wrap justify-between gap-4"
+    >
       {cards.map((card, index) => (
         <div
           key={index}
@@ -38,16 +45,20 @@ export const SubmissionStatusCards = () => {
               {card.icon}
             </div>
           </div>
-          <div className="-mt-4">
-            <span className="text-2xl font-semibold text-muted-foreground leading-snug tracking-tight">
-              {card.value}
-            </span>
-          </div>
+
+          <CountUp
+            from={0}
+            to={card.value}
+            separator=""
+            duration={1}
+            className="text-2xl -mt-4 font-semibold text-muted-foreground leading-snug tracking-tight"
+        /  >
+      
           <span className="text-xs text-stone-500 font-medium tracking-tight">
             {card.label}
           </span>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };

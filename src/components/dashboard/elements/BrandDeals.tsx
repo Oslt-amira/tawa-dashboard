@@ -7,19 +7,19 @@ import { ArrowUpRight } from "lucide-react";
 const deals = [
   {
     brand: "Nike Collaboration",
-    amount: "$2,500",
+    amount: "2,500 TD",
     due: "Feb 15",
     status: "Active",
   },
   {
     brand: "Beauty Brand",
-    amount: "$3,200",
-    due: "Mar 1",
+    amount: "3,200 TD",
+    due: "Juin 15",
     status: "Negotiating",
   },
   {
     brand: "Beauty Brand",
-    amount: "$3,200",
+    amount: "1,800 TD",
     due: "Jan 22",
     status: "Done",
   },
@@ -42,13 +42,20 @@ export const BrandDeals = () => {
       {" "}
       <div>
         <div className="absolute top-3 right-3 bg-muted rounded-full p-1 hover:cursor-pointer shadow-sm">
-          <ArrowUpRight className="h-4 w-4 text-muted-foreground" strokeWidth={1.5} />
+          <ArrowUpRight
+            className="h-4 w-4 text-muted-foreground"
+            strokeWidth={1.5}
+          />
         </div>
         <div className="text-muted-foreground font-bold pb-2">Brand Deals</div>
       </div>
       <div className="grid sm:grid-cols-2 gap-4">
         {deals.map((deal, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.4, delay: index * 0.3 }}
             key={index}
             className="rounded-xl border p-4 flex justify-between items-start"
           >
@@ -68,7 +75,7 @@ export const BrandDeals = () => {
             >
               {deal.status}
             </span>
-          </div>
+          </motion.div>
         ))}
       </div>
     </motion.div>

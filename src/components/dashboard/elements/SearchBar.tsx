@@ -15,7 +15,10 @@ export default function SearchBar() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setIsFocused(false);
+        setHasText(false);
         inputRef.current?.blur();
+        if (inputRef.current && inputRef.current.value)
+          inputRef.current.value = "";
       }
     };
 

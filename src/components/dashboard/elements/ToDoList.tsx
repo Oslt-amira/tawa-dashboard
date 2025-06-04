@@ -66,8 +66,8 @@ export const ToDoList = () => {
               key={task.id}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.4, delay: index * 0.3 }}
               className="flex flex-col my-2 border-b border-stone-400/50 rounded-lg"
             >
               <div className="flex items-start gap-3 px-1 py-3">
