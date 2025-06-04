@@ -1,6 +1,5 @@
 "use client";
 
-import { CardDescription } from "@/components/ui/card";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";

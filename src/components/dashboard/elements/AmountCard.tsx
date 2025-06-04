@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card";
 import { ArrowUpRight, TrendingDown, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 
