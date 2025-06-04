@@ -1,20 +1,31 @@
 "use client";
 import { Input } from "@/components/ui/input";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import SocialButtons from "./SocialButtons";
 import NavButton from "./NavButton";
 
 export default function Step1Account({ onNext }: { onNext: () => void }) {
   return (
     <>
-      <Input id="email" placeholder="Email" type="email" required />
-      <Input id="password" placeholder="Password" type="password" required />
+      <Input
+        className="placeholder:text-stone-500"
+        id="email"
+        placeholder="Email"
+        type="email"
+        required
+      />
+      <Input
+        className="placeholder:text-stone-500"
+        id="password"
+        placeholder="Password"
+        type="password"
+        required
+      />
       <Input
         id="confirm-password"
         placeholder="Confirm Password"
         type="password"
         required
+        className="placeholder:text-stone-500"
       />
 
       <NavButton
@@ -29,7 +40,7 @@ export default function Step1Account({ onNext }: { onNext: () => void }) {
           <span className="w-full border-t" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="  backdrop-blur-xl px-2 text-muted-foreground">
+          <span className="  backdrop-blur-xl px-2 text-muted-foreground dark:text-stone-600">
             Or sign up with
           </span>
         </div>

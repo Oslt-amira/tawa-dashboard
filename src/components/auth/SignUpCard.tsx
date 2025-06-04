@@ -33,7 +33,7 @@ export default function SignUpCard({ onBack }: { onBack: () => void }) {
           alt="Main"
           width={100}
           height={100}
-          className="opacity-75 filter dark:invert"
+          className="opacity-75 "
           unoptimized
         />
         <h1 className="text-2xl font-semibold text-stone-800/80">
@@ -62,7 +62,7 @@ export default function SignUpCard({ onBack }: { onBack: () => void }) {
       </AnimatePresence>
 
       {step === 1 && (
-        <div className="text-center text-sm text-muted-foreground mt-6">
+        <div className="text-center text-sm text-muted-foreground dark:text-stone-600 mt-6">
           Already have an account?{" "}
           <button onClick={onBack} className="underline hover:text-primary">
             Sign in

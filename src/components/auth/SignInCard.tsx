@@ -37,13 +37,13 @@ export default function SignInCard() {
             alt="Main"
             width={100}
             height={100}
-            className="opacity-75 filter dark:invert"
+            className="opacity-75 "
             unoptimized
           />
           <h1 className="text-2xl font-semibold tracking-tight text-stone-800/80">
             Sign in to your account
           </h1>
-          <p className="text-sm text-muted-foreground/80">
+          <p className="text-sm text-muted-foreground/80 dark:text-stone-600">
             Enter your credentials to continue
           </p>
         </div>
@@ -54,14 +54,19 @@ export default function SignInCard() {
             placeholder="name@example.com"
             type="email"
             required
+            className=" placeholder:text-stone-500"
           />
           <Input
             id="password"
             placeholder="••••••••"
             type="password"
             required
+            className=" placeholder:text-stone-500"
           />
-          <Button type="submit" className="w-full">
+          <Button
+            type="submit"
+            className="w-full dark:bg-stone-900 bg-stone-900 text-stone-200 dark:text-stone-200"
+          >
             Sign In <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </form>
@@ -71,14 +76,14 @@ export default function SignInCard() {
             <span className="w-full border-t" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="  backdrop-blur-xl px-2 text-muted-foreground">
+            <span className="  backdrop-blur-xl px-2 text-muted-foreground dark:text-stone-600">
               Or sign in with
             </span>
           </div>
         </div>
 
         <SocialButtons />
-        <div className="px-8   text-center text-sm text-muted-foreground">
+        <div className="px-8   text-center text-sm text-muted-foreground dark:text-stone-600">
           Don't have an account?{" "}
           <button
             type="button"

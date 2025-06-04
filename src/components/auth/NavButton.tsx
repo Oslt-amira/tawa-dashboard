@@ -23,10 +23,10 @@ export default function NavButton({
     "flex items-center justify-center gap-2 rounded-md p-2 text-sm";
 
   const styles = {
-    back: "border",
-    next: "bg-primary text-white",
-    submit: "bg-primary text-white",
-    signUp: "bg-primary text-white",
+    back: "border rounded-full",
+    next: "bg-stone-900 rounded-full text-stone-200",
+    submit: "bg-stone-900 rounded-full text-stone-200",
+    signUp: "bg-stone-900 text-stone-200",
   };
 
   const icon = {
