@@ -99,7 +99,7 @@ export const DateRangeSelector = () => {
           <div className="flex flex-col items-start leading-none">
             <span className="text-sm font-medium">{formatRange()}</span>
           </div>
-          <motion.button
+          <motion.div
             className="bg-white/80 items-center flex backdrop-blur-md rounded-full p-1 border border-border transition-all text-muted-foreground hover:text-purple-400"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -107,7 +107,7 @@ export const DateRangeSelector = () => {
             animate={{ opacity: 1, y: 0 }}
           >
             <ChevronDown className="h-5 w-5" />
-          </motion.button>
+          </motion.div>
         </motion.button>
       </PopoverTrigger>
 
