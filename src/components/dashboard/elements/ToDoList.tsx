@@ -54,7 +54,7 @@ export const ToDoList = () => {
       className="py-4 px-5 border shadow-none rounded-3xl"
     >
       <div>
-        <div className="text-muted-foreground font-bold">Recent Activity</div>
+        <div className="text-muted-foreground font-bold">To do list</div>
         <CardDescription className="text-stone-400">
           Your latest Tasks
         </CardDescription>
